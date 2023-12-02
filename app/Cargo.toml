@@ -1,0 +1,11 @@
+[package]
+name = "app"
+description = "The main application that pulls together other crates."
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+tracing-subscriber = "0.3"
+tracing = "0.1"
+web = { path = "../web" }

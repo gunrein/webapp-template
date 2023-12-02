@@ -1,0 +1,11 @@
+[package]
+name = "web"
+description = "Common libraries and functions for web-based features."
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.7", features = ["tracing"] }
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1", features = ["net"], default-features = false }
+tracing = "0.1"

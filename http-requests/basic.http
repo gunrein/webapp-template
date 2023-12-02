@@ -1,0 +1,12 @@
+### GET root
+GET http://localhost:3000/
+Accept: text/html
+
+### POST new user
+POST http://localhost:3000/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "template-user"
+}
