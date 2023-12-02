@@ -1,10 +1,15 @@
 use axum::routing::get;
 use axum::Router;
+use tower_http::trace::TraceLayer;
+use tracing::info;
 
-pub async fn start_server() {
-    let app = Router::new().route("/", get(root));
+pub async fn start_server(addr: &str) {
+    let app = Router::new()
+        .route("/", get(root))
+        .layer(TraceLayer::new_for_http());
 
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    info!("Starting server at {addr}");
+    let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
 

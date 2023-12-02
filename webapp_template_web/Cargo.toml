@@ -1,5 +1,5 @@
 [package]
-name = "web"
+name = "webapp_template_web"
 description = "Common libraries and functions for web-based features."
 version = "0.1.0"
 edition = "2021"
@@ -8,4 +8,5 @@ edition = "2021"
 axum = { version = "0.7", features = ["tracing"] }
 serde = { version = "1.0", features = ["derive"] }
 tokio = { version = "1", features = ["net"], default-features = false }
-tracing = "0.1"
+tower-http = { version = "0.5", features = ["trace"] }
+tracing.workspace = true
