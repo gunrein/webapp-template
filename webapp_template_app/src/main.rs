@@ -1,6 +1,6 @@
 use tracing_subscriber::layer::SubscriberExt;
 use tracing_subscriber::util::SubscriberInitExt;
-use webapp_template_web::start_server;
+use webapp_template_web::{base_routes, Server};
 
 #[tokio::main]
 async fn main() {
@@ -9,6 +9,9 @@ async fn main() {
         .with(tracing_subscriber::fmt::layer())
         .init();
 
-    let addr = "0.0.0.0:3000";
-    start_server(addr).await
+    let server = Server {
+        address: "0.0.0.0:3000",
+        routers: vec![base_routes()],
+    };
+    server.start().await
 }
