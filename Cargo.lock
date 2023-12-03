@@ -937,6 +937,7 @@ dependencies = [
  "http-body",
  "http-body-util",
  "pin-project-lite",
+ "tokio",
  "tower-layer",
  "tower-service",
  "tracing",
@@ -1059,8 +1060,11 @@ name = "webapp_template_web"
 version = "0.1.0"
 dependencies = [
  "axum",
+ "hyper",
+ "hyper-util",
  "serde",
  "tokio",
+ "tower",
  "tower-http",
  "tracing",
 ]
