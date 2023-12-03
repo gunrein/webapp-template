@@ -1,0 +1,10 @@
+[package]
+name = "webapp_template_feature_a"
+description = "An example feature crate named `a` used by `app`."
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.7", features = ["tracing"] }
+tracing.workspace = true
+webapp_template_web = { path = "../webapp_template_web" }

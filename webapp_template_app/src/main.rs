@@ -1,6 +1,7 @@
 use tracing_subscriber::layer::SubscriberExt;
 use tracing_subscriber::util::SubscriberInitExt;
-use webapp_template_web::{base_routes, Server};
+use webapp_template_feature_a::base_routes;
+use webapp_template_web::Server;
 
 #[tokio::main]
 async fn main() {

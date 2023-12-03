@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["webapp_template_app", "feature-a", "webapp_template_web"]
+members = ["webapp_template_app", "webapp_template_feature_a", "webapp_template_web"]
 
 [workspace.dependencies]
 tracing = "0.1"

@@ -7,5 +7,6 @@ edition = "2021"
 [dependencies]
 tokio = { version = "1", features = ["full"] }
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+webapp_template_feature_a = { path = "../webapp_template_feature_a" }
 webapp_template_web = { path = "../webapp_template_web" }
 tracing.workspace = true

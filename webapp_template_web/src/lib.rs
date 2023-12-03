@@ -1,5 +1,4 @@
 use axum::extract::Request;
-use axum::routing::{get, MethodRouter};
 use axum::Router;
 use hyper::body::Incoming;
 use hyper_util::rt::TokioIo;
@@ -11,10 +10,6 @@ use tower::Service;
 use tower_http::timeout::TimeoutLayer;
 use tower_http::trace::TraceLayer;
 use tracing::{debug, info};
-
-pub fn route(path: &str, method_router: MethodRouter<()>) -> Router {
-    Router::new().route(path, method_router)
-}
 
 pub struct Server<'a> {
     pub routers: Vec<Router>,
@@ -134,14 +129,6 @@ impl Server<'_> {
         debug!("waiting for {} tasks to finish", close_tx.receiver_count());
         close_tx.closed().await;
     }
-}
-
-pub fn base_routes() -> Router {
-    route("/", get(root))
-}
-
-async fn root() -> &'static str {
-    "Hello template"
 }
 
 async fn shutdown_signal() {
