@@ -400,6 +400,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6877bb514081ee2a7ff5ef9de3281f14a4dd4bceac4c09388074a6b5df8a139a"
 
 [[package]]
+name = "minijinja"
+version = "1.0.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "208758577ef2c86cf5dd3e85730d161413ec3284e2d73b2ef65d9a24d9971bcb"
+dependencies = [
+ "serde",
+]
+
+[[package]]
 name = "miniz_oxide"
 version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -926,6 +935,7 @@ name = "webapp_template_feature_a"
 version = "0.1.0"
 dependencies = [
  "axum",
+ "minijinja",
  "tracing",
  "webapp_template_web",
 ]
@@ -937,6 +947,7 @@ dependencies = [
  "axum",
  "hyper",
  "hyper-util",
+ "minijinja",
  "serde",
  "tokio",
  "tower",

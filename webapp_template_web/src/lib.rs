@@ -3,6 +3,7 @@ use axum::Router;
 use hyper::body::Incoming;
 use hyper_util::rt::TokioIo;
 use std::time::Duration;
+use minijinja::Environment;
 use tokio::net::TcpListener;
 use tokio::signal;
 use tokio::sync::watch;
@@ -14,6 +15,10 @@ use tracing::{debug, info};
 pub struct Server<'a> {
     pub routers: Vec<Router>,
     pub address: &'a str,
+}
+
+pub fn create_template_env() -> Environment<'static> {
+    Environment::new()
 }
 
 impl Server<'_> {

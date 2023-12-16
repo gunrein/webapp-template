@@ -3,5 +3,5 @@ resolver = "2"
 members = ["webapp_template_app", "webapp_template_feature_a", "webapp_template_web"]
 
 [workspace.dependencies]
+minijinja = { version = "1" }
 tracing = "0.1"
-

@@ -8,6 +8,7 @@ edition = "2021"
 axum = { version = "0.7", features = ["tracing"] }
 hyper = { version = "1" }
 hyper-util = { version = "0.1", features = ["tokio"], default-features = false }
+minijinja.workspace = true
 serde = { version = "1.0", features = ["derive"] }
 tokio = { version = "1", features = ["net", "signal"], default-features = false }
 tower = { version = "0.4", features = ["util"] }
